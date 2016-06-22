@@ -34,8 +34,8 @@ export class Tag extends React.Component {
   }
   render() {
     return (
-      <span style={tagStyles} className={this.props.active}>{this.props.name}
-        <i style={tagCloseStyles} className="fa fa-times" onClick={this.handleClose.bind(this)}></i>
+      <span className={"tag-styles " + this.props.active}>{this.props.name}
+        <i className="fa fa-times tag-close" onClick={this.handleClose.bind(this)}></i>
       </span>
     );
   }

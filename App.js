@@ -1,22 +1,6 @@
 import React from 'react';
 import { Tag } from './Tag.js'; // TODO: Should it have jsx extension?
 
-// TODO: CSS Styles: What's the right way?
-// Seems like there's a debate.
-var styles = {
-  fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-  color: "#4b4d4c",
-  fontWeight: "bold",
-  textAlign: "center"
-};
-
-var tagInputStyles = { 
-  fontSize: "30px",
-  height: "45px",
-  width: "80%",
-  margin: "20px"
-};
-
 
 class App extends React.Component {
   
@@ -116,13 +100,13 @@ class App extends React.Component {
     };
     
     return (
-      <div style={styles}>
-        <div>
-          <input style={tagInputStyles} type="text"
+      <div className="normal-styles">
+        <div className="tag-editor">
+          {this.state.tags.map(createTag, this)}
+          <input className="tag-input" type="text"
             onKeyDown={this.handleInput.bind(this)}
             onKeyPress={this.handleKeyPress.bind(this)} />
         </div>
-        {this.state.tags.map(createTag, this)}
       </div>
     );
   
