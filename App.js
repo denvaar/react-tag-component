@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tag } from './Tag.js'; // TODO: Should it have jsx extension?
+import { Tag } from './Tag.js';
 
 
 class App extends React.Component {
@@ -20,8 +20,6 @@ class App extends React.Component {
   
   }
 
-  // TODO: Is the underscore propper style for
-  // private methods in React?
   _checkForMatches(val, tagsToHighlight, charPressed='') {
     
     this.state.tags.forEach(function(tag) {
