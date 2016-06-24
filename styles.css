@@ -3,18 +3,18 @@ input {
   color: #4B4D4C;
 }
 .active {
-  background-color: #4e9ce0 !important;
-  color: hsla(208, 100%, 85%, 1.0) !important;
+  background-color: #95a3b3 !important;
+  color: #fff !important;
 }
 .tag-styles {
   padding-top: 0.4em;
   padding-right: 0.5em;
   padding-bottom: 0.4em;
   padding-left: 0.5em;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
-  background-color: #0074D9;
-  color: hsla(208, 100%, 85%, 1.0);
+  background-color: #6C7A89;
+  color: #ECECEC;
   margin-right: 2px;
   border-radius: 5px;
   cursor: default;
@@ -26,6 +26,8 @@ input {
   position: relative;
   outline: none;
   border: none;
+  display: table-cell;
+  width: 100%;
 }
 .tag-editor {
   border: 1px solid #6d6d6d;
@@ -37,6 +39,7 @@ input {
   white-space: nowrap;
   overflow: hidden;
   width: 500px;
+  display: table;
   box-shadow: 0 1px 4px rgba(12,13,14,0.1) inset;
 }
 .normal-styles {
@@ -50,5 +53,6 @@ input {
   top: -1px;
   right: -5px;
   font-size: 13px;
+  color: #ffa08e;
 }
 

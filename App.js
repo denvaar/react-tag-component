@@ -4,11 +4,9 @@ import { Tag } from './Tag.js'; // TODO: Should it have jsx extension?
 
 class App extends React.Component {
   
-  constructor() {
-    super();
-    // TODO: How could I pass these strings into this
-    // component from the outside?
-    this.state = {tags: ["Use", "the", "tab key", "to", "create tags."],
+  constructor(props) {
+    super(props);
+    this.state = {tags: props.existingTags,
                   existingTags: []}
   }
 
@@ -56,8 +54,15 @@ class App extends React.Component {
       }
     
     }
-    
-    if (e.keyCode == 9 && e.target.value.length > 0) { // Tab key
+    if (e.keyCode == 8 && e.target.value.length == 0) {
+      e.preventDefault();
+      var tags = this.state.tags;
+      var last_tag = tags.splice(-1,1);
+      this.setState({tags:tags});
+      e.target.value = last_tag;
+    }
+
+    if ((e.keyCode == 9 || e.keyCode == 13) && e.target.value.length > 0) { // Tab key
       
       var newTags = this.state.tags.slice();
       e.preventDefault();
@@ -88,9 +93,6 @@ class App extends React.Component {
     
     var createTag = function(name) {
       return (
-        // TODO: What's the best way to update
-        // child component's CSS styles durring
-        // the lifecycle?
         <Tag key={name}
              name={name}
              active={this.state.existingTags.indexOf(name) > -1 ? 'active' : ''}
@@ -113,7 +115,10 @@ class App extends React.Component {
   }
 
 }
-// TODO: What's the difference between using export
-// after the class declaration, and inline?
+
+App.propTypes = {
+  existingTags: React.PropTypes.array
+}
+
 export default App;
 
