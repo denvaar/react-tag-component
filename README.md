@@ -11,4 +11,4 @@ npm start
 
 ### Example:
 
-<img width="522" alt="Demo" src="https://cloud.githubusercontent.com/assets/10538978/16330491/cdac1012-39a6-11e6-8c05-a2aaa9616948.gif">
+<img width="522" alt="Demo" src="https://cloud.githubusercontent.com/assets/10538978/16330769/ef332a5c-39a8-11e6-8bf0-5a5109216d53.gif">
